@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gen.GG</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"><script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 상단 메뉴 -->
+    <header class="navbar">
+        <nav class="nav-left">
+            <a th:each="navElement : ${navList}"
+               th:href="${navElement.get('href')}"
+               th:utext="${navElement.get('title')}"
+            ></a>
+        </nav>
+        <div class="nav-right">
+            <i class="icon-user">👤</i>
+            <i class="icon-lang">🌐</i>
+        </div>
+    </header>
+
+    <!-- 초록색 배너 -->
+    <div class="banner">
+        <span class="patch">Patch 2.22</span>
+        <span>Gen.GG 신규 업데이트 - 첫 라인전 코칭 출시</span>
+        <span class="arrow">→</span>
+    </div>
+
+    <!-- 중앙 메인 콘텐츠 -->
+    <main class="main">
+        <img th:src="@{/images/logo.png}" alt="Gen.G 로고" class="logo">
+        <div class="search-box">
+            <form th:action="@{/profile}" id="profileForm" method="get">
+                <select id="countrySelect">
+                    <option th:each="country : ${countryList}" th:text="${country}"
+                            th:selected="${selectedCountry == country}"
+                            id="option"></option>
+                </select>
+                <!-- 띄어쓰기 있든 없든 검색 가능 -->
+                <input type="text" id="keyword" placeholder="소환사명을 입력하세요">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+    </main>
+
+
+<script>
+    const form = $('#profileForm');
+    const input = $('#keyword');
+    const countrySelect = $('#countrySelect');
+
+    form.submit(function(e){
+        e.preventDefault();
+        const keyword = input.val().trim();
+        const country = countrySelect.val().toLowerCase();
+        if(keyword === "") return;
+
+        const encodeKeyword = encodeURIComponent(keyword);
+
+        location.href = `/ko/${country}/profile/${encodeKeyword}`;
+    });
+
+    countrySelect.on('change', function(){
+        let lowerCaseValue = this.value.toString().toLowerCase();
+        const url = `/ko/${lowerCaseValue}/home`;
+        window.history.pushState({}, '', url);
+    });
+
+</script>
+</body>
+</html>

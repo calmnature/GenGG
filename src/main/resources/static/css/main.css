@@ -1,0 +1,110 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 70%;
+    margin: 3% auto 200px;
+}
+
+/* 상단 네비게이션은 동일하게 유지 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 12px 30px;
+    font-size: 15px;
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.new-badge {
+    background-color: #31c48d;
+    color: black;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    /*margin-right: 10px;*/
+}
+
+.nav-right i {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.banner {
+    background-color: #4d7c0f;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.banner .patch {
+    background-color: #6b8e23;
+    border-radius: 12px;
+    padding: 3px 8px;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.banner .arrow {
+    margin-left: 8px;
+}
+
+/* 🧩 중앙 메인 영역 수정 */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 450px); /* 화면 중앙에 위치하도록 */
+}
+
+/* 로고 이미지 */
+.logo {
+    width: 300px;
+    margin-bottom: 40px;
+    object-fit: contain;
+}
+
+/* 검색 박스 */
+.search-box {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-box select {
+    border: none;
+    background: none;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 200px;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
