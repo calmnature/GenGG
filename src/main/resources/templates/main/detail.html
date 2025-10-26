@@ -1,10 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Gen.GG</title>
+    <title>Your.GG</title>
+    <link rel="stylesheet" th:href="@{/css/detail.css}">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Detail Page</h1>
+<!-- 상단 네비게이션 -->
+<header class="navbar">
+    <nav class="nav-left">
+        <a href="/" class="logo-text">YOUR.GG</a>
+        <select style="background: #1c1c1f; color: #e4e4e7; border: 1px solid #3a3a3e; padding: 0.4rem 0.8rem; border-radius: 6px;">
+            <option>KR</option>
+        </select>
+        <div class="search-box-nav">
+            <input type="text" placeholder="소환사명 검색...">
+            <button>🔍</button>
+        </div>
+    </nav>
+    <div class="nav-right">
+        <a href="#">커뮤니티</a>
+        <a href="#">코칭</a>
+        <a href="#">듀오찾기</a>
+        <a href="#">AI 코칭 <span style="background: #22c55e; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; margin-left: 0.3rem;">NEW</span></a>
+        <i class="icon-user">👤</i>
+        <i class="icon-lang">🌐</i>
+    </div>
+</header>
+
+<!-- 프로필 컨테이너 -->
+<div class="profile-container">
+    <!-- 프로필 헤더 -->
+    <div class="profile-header">
+        <div class="profile-image">
+            <img src="https://via.placeholder.com/120" alt="프로필 이미지">
+        </div>
+        <div class="profile-info">
+            <div class="profile-name">
+                <span class="summoner-name">괴물쥐</span>
+                <span class="tag">#KR3</span>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span>👁️</span>
+                    <span>156.7k</span>
+                </div>
+                <div class="stat-item">
+                    <span>⭐</span>
+                    <span>평점 2.3 (5763)</span>
+                </div>
+                <div class="stat-item">
+                    <span>✏️</span>
+                    <span>평가</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <div class="social-icon">🎮</div>
+                <div class="social-icon">📺</div>
+                <div class="social-icon">▶️</div>
+            </div>
+            <p style="margin-top: 0.8rem; color: #a1a1aa; font-size: 0.9rem;">인기 플레이어 - 괴물쥐</p>
+        </div>
+    </div>
+
+    <!-- 액션 버튼 -->
+    <div class="action-buttons">
+        <button class="btn btn-primary">🔄 18시간 전</button>
+        <button class="btn btn-secondary">듀오찾기 →</button>
+        <button class="btn btn-secondary">⚡ AI 하이라이트 생성</button>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="content-wrapper">
+        <!-- 왼쪽: 랭크 정보 -->
+        <div>
+            <div class="rank-card">
+                <div class="rank-header">
+                    <div class="rank-tier">
+                        <div class="tier-icon">🦋</div>
+                        <div class="tier-info">
+                            <h2>Master</h2>
+                            <p class="tier-lp">85 LP</p>
+                        </div>
+                    </div>
+                    <div class="win-rate">
+                        <p class="win-rate-text">승률 50% (505승 503패)</p>
+                        <p class="win-rate-percent">25.10.22</p>
+                    </div>
+                </div>
+
+                <div class="season-tabs">
+                    <span class="season-tab active">S24-3 D1</span>
+                    <span class="season-tab">S24-2 M</span>
+                    <span class="season-tab">S24-1 M</span>
+                    <span class="season-tab">S23-2 M</span>
+                    <span class="season-tab">S23-1 M</span>
+                    <span class="season-tab">S22 M</span>
+                    <span class="season-tab">S21 D3</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>

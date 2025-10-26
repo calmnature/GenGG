@@ -1,5 +1,6 @@
 package geng.your.gg.geng.main.controller;
 
+import geng.your.gg.geng.main.model.AccountDto;
 import geng.your.gg.geng.main.service.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,8 @@ public class MainController {
     // 검색 조건에 검색 나라 셀렉트 옵션
     private final String[] countryList = {"KR", "ME", "NA", "BR", "EUNE", "EUW", "LAN",
             "LAS", "OCE", "RU", "TR", "JP", "SG", "TW", "VN"};
+
+    private static AccountDto accountDto;
 
     @GetMapping("/")
     public String redirect(Model model) {
@@ -47,6 +50,22 @@ public class MainController {
     @GetMapping("/ko/{country}/profile/{id}")
     public String searchDetail(Model model, @PathVariable String country, @PathVariable String id) {
         log.info("Country : {} / UserId : {}", country, id);
+        try{
+            // id 입력받은 '#' 기준으로 나눔
+            String[] arr = id.split("#");
+            String gameName = arr[0];
+            String tagLine = arr[1];
+
+            accountDto = mainService.requestApiAccount(gameName, tagLine, country);
+
+            log.info("Account 정보 = {}", accountDto);
+
+            // accountDto의 puuid를 이용하여 LeagueEntryDto를 가져와서 model에 담아야 함
+            // https://kr.api.riotgames.com/lol/league/v4/entries/by-puuid/{puuid}?api_key={apiKey}
+        }catch(Exception e) {
+            log.info("Account Request Error : {}", e.getMessage());
+        }
+
         return "main/detail";
     }
 }

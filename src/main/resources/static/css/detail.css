@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background-color: #1c1c1f;
+    color: #e4e4e7;
+}
+
+/* 상단 네비게이션 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2a2a2e;
+    border-bottom: 1px solid #3a3a3e;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-right a {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-left a:hover {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.search-box-nav {
+    display: flex;
+    align-items: center;
+    background-color: #1c1c1f;
+    border: 1px solid #3a3a3e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-box-nav input {
+    background: transparent;
+    border: none;
+    padding: 0.6rem 1rem;
+    color: #e4e4e7;
+    outline: none;
+    width: 200px;
+}
+
+.search-box-nav input::placeholder {
+    color: #71717a;
+}
+
+.search-box-nav button {
+    background: transparent;
+    border: none;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #a1a1aa;
+    transition: color 0.2s;
+}
+
+.search-box-nav button:hover {
+    color: #fff;
+}
+
+.icon-user, .icon-lang {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* 프로필 컨테이너 */
+.profile-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* 프로필 헤더 */
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.summoner-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.tag {
+    font-size: 1.5rem;
+    color: #71717a;
+}
+
+.profile-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a3a3e;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.social-icon:hover {
+    background-color: #4a4a4e;
+}
+
+/* 액션 버튼 */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #ff6b35;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #ff5722;
+}
+
+.btn-secondary {
+    background-color: #2a2a2e;
+    color: #e4e4e7;
+    border: 1px solid #3a3a3e;
+}
+
+.btn-secondary:hover {
+    background-color: #3a3a3e;
+}
+
+/* 메인 콘텐츠 영역 */
+.content-wrapper {
+    display: block;
+}
+
+/* 랭크 카드 */
+.rank-card {
+    background-color: #2a2a2e;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.rank-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.rank-tier {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tier-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #9333ea, #c084fc);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.tier-info {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.tier-info h2 {
+    font-size: 1.8rem;
+}
+
+.tier-lp {
+    color: #a1a1aa;
+    font-size: 0.95rem;
+}
+
+.win-rate {
+    text-align: right;
+}
+
+.win-rate-text {
+    font-size: 0.9rem;
+    color: #a1a1aa;
+    margin-bottom: 0.3rem;
+}
+
+.win-rate-percent {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* 시즌 탭 */
+.season-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #3a3a3e;
+}
+
+.season-tab {
+    padding: 0.5rem 1rem;
+    background-color: #1c1c1f;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.season-tab:hover {
+    background-color: #3a3a3e;
+}
+
+.season-tab.active {
+    background-color: #3a3a3e;
+}
+
+/* LP 그래프 */
+.lp-graph {
+    background-color: #2a2a2e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 200px;
+    position: relative;
+}
+
+.graph-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, #ff6b35 50%, transparent 100%);
+    opacity: 0.1;
+    border-radius: 8px;
+}
+
+/* 사이드바 */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* WEB 개발 카드 */
+.web-dev-card {
+    background-color: #2a2a2e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.web-dev-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.web-dev-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.web-dev-subtitle {
+    font-size: 0.85rem;
+    color: #71717a;
+    margin-bottom: 0.3rem;
+}
